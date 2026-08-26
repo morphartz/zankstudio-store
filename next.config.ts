@@ -1,11 +1,2 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: '*.supabase.co' },
-    ],
-  },
-}
-
-export default nextConfig
+// Configuration moved to next.config.mjs for Next.js 14 compatibility.
+export {};
