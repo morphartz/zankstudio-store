@@ -1,0 +1,10 @@
+"use client";
+
+import Link from "next/link";
+import { ArrowRight, Minus, Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
+
+export default function CartPage(){
+  const [qty,setQty]=useState(1); const price=3500; const delivery=0;
+  return <main><header className="header"><div className="container nav"><Link href="/" className="logo">ZANK STUDIO</Link><Link href="#" className="muted">CART / {qty}</Link></div></header><section className="section"><div className="container"><p className="muted">CART</p><h1 style={{fontSize:'clamp(45px,7vw,90px)',letterSpacing:'-.07em',margin:'5px 0 35px'}}>YOUR BAG.</h1><div className="checkout"><div className="panel" style={{padding:20}}><div style={{display:'grid',gridTemplateColumns:'130px 1fr auto',gap:18,alignItems:'center',paddingBottom:20,borderBottom:'1px solid #eee'}}><div className="product-image" style={{borderRadius:14}}/><div><strong>CUSTOM TEE 01</strong><p className="muted">Black / M · Personalized</p><button className="btn-white"><Trash2 size={13}/> Remove</button></div><div style={{textAlign:'right'}}><div className="price">3,500 DA</div><div style={{display:'flex',gap:5,marginTop:10}}><button className="iconbtn" onClick={()=>setQty(Math.max(1,qty-1))}><Minus size={13}/></button><span style={{padding:'12px 7px',fontSize:12}}>{qty}</span><button className="iconbtn" onClick={()=>setQty(qty+1)}><Plus size={13}/></button></div></div></div></div><div className="panel summary"><h3 style={{marginTop:0}}>ORDER SUMMARY</h3><div className="summary-row"><span>Subtotal</span><strong>{(price*qty).toLocaleString('fr-DZ')} DA</strong></div><div className="summary-row"><span>Delivery</span><span>Calculated at checkout</span></div><Link className="btn-black" style={{display:'flex',justifyContent:'center',alignItems:'center',gap:8,marginTop:18}} href="/checkout">CHECKOUT <ArrowRight size={14}/></Link><p className="muted" style={{fontSize:10,marginTop:12}}>Cash on Delivery · DHD Home or Stop Desk</p></div></div></div></section></main>;
+}
