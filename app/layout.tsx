@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ZANK STUDIO | Personalized Tees",
-  description: "Personalized streetwear tees with delivery across Algeria.",
+  description: "Personalized tees with COD and DHD delivery across Algeria.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

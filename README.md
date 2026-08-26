@@ -1,21 +1,21 @@
 # Zank Studio Store
 
-Monochrome personalized T-shirt storefront for Algeria, with COD checkout and an admin control surface.
+Production-oriented monochrome personalized T-shirt storefront for Algeria.
 
-## Current routes
+## Store
+- COD checkout
+- Home and stop-desk delivery
+- DHD rates managed in Supabase
+- Color and size selection
+- Admin-managed products and orders
+- Apple-inspired motion and typography
 
-- `/` storefront
-- `/products/[id]` product + personalization
-- `/cart` cart
-- `/checkout` COD checkout
-- `/admin` store dashboard
+## Admin
+The protected admin area lives at `/admin/login` and uses Supabase Auth. The authorized admin email is `a.g.b.morphzy@gmail.com`.
 
-## Store details
+## Stack
+Next.js App Router, TypeScript, Supabase, Vercel.
 
-Phone / WhatsApp: 0798 46 06 04  
-Instagram: @zankstudio  
-Business: Algiers / Oran
-
-## Production architecture
-
-The current UI is intentionally deployable as a clean frontend prototype. Before accepting real customer orders, connect persistent product/order storage, protected admin authentication, image storage, and the final DHD rate table through environment variables and a production database.
+## Required environment variables
+`NEXT_PUBLIC_SUPABASE_URL`
+`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
